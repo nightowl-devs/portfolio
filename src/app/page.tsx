@@ -7,15 +7,15 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className=" isolate flex w-full flex-col gap-4">
-      <div className=" flex h-dvh w-full flex-col px-12 pt-8">
+    <div className=" isolate flex w-full flex-col gap-16">
+      <div className="reative flex min-h-dvh w-full flex-col px-12 pt-8">
         <Image
           src="/img/hero-bg.png"
           alt=""
           fill
           priority
           sizes="100vw"
-          className="object-cover object-right opacity-60 md:opacity-50 xl:object-contain xl:opacity-100 -z-10"
+          className="object-cover object-right opacity-40 md:opacity-50 xl:object-contain xl:opacity-100 -z-10"
         />
         <Navbar />
         <Hero />
@@ -24,7 +24,7 @@ export default function Home() {
         <AboutSection />
         <WorksSection />
         <ContactSection />
-      </div>
+      </div>  
     </div>
   );
 }

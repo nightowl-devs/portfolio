@@ -11,6 +11,19 @@ const NAV_ITEMS = [
   { name: "Contact", hash: "#contact" },
 ];
 
+const CONTACT_ITEMS = [
+  {
+    imageSrc: "/img/github.svg",
+    targetUrl: "https://github.com/nightowl-devs",
+    label: "GitHub",
+  },
+  {
+    imageSrc: "/img/linkedin.svg",
+    targetUrl: "https://www.linkedin.com/in/stanisław-botwina-693724388/",
+    label: "LinkedIn",
+  },
+];
+
 export function Navbar() {
   const [currentHash, setCurrentHash] = useState("");
 
@@ -38,15 +51,23 @@ export function Navbar() {
     <nav>
       <div className="hidden md:grid w-full grid-cols-[1fr_auto_1fr] items-start gap-4 ">
         <div className="flex flex-col items-start justify-center gap-2">
-          <Image src="/img/profile-pic.png" alt="Profile Picture" width={64} height={64} className="shrink-0" />
+          <Image
+            src="https://media.licdn.com/dms/image/v2/D4D35AQHk4m5joBZ8kw/profile-framedphoto-shrink_800_800/B4DZ..JjhWHQAY-/0/1785601604120?e=1787832000&v=beta&t=kFPaOzuWdL-qiTbpcbtJZ6k7K6lUpL9AuRJM-KLYCcg"
+            alt="MY Picture WOW!"
+            width={64}
+            height={64}
+            className="shrink-0 rounded-full"
+          />
 
           <div className="flex flex-row gap-2">
             <p className="text-4xl text-display font-bold tracking-tight text-black [writing-mode:vertical-lr]">botwinka</p>
 
             <div className="flex flex-col items-end justify-end gap-1">
-              <Image src="/img/github.svg" className="cursor-pointer" alt="GitHub" width={48} height={48} />
-
-              <Image src="/img/linkedin.svg" className="cursor-pointer" alt="LinkedIn" width={48} height={48} />
+              {CONTACT_ITEMS.map((item) => (
+                <a key={item.label} href={item.targetUrl} target="_blank" rel="noopener noreferrer">
+                  <Image src={item.imageSrc} className="cursor-pointer" alt={item.label} width={48} height={48} />
+                </a>
+              ))}
             </div>
           </div>
         </div>
@@ -81,14 +102,22 @@ export function Navbar() {
       <div className="flex md:hidden flex-row justify-between items-start">
         <div className="flex flex-row">
           <div className="flex flex-col gap-2  ">
-            <Image src="/img/profile-pic.png" alt="Profile Picture" width={48} height={48} className="shrink-0" />
-            <h1 className="text-black font-display font-bold text-3xl  [writing-mode:vertical-lr]">botwinka</h1>
+            <Image
+              src="https://media.licdn.com/dms/image/v2/D4D35AQHk4m5joBZ8kw/profile-framedphoto-shrink_800_800/B4DZ..JjhWHQAY-/0/1785601604120?e=1787832000&v=beta&t=kFPaOzuWdL-qiTbpcbtJZ6k7K6lUpL9AuRJM-KLYCcg"
+              alt="Profile Picture"
+              width={48}
+              height={48}
+              className="shrink-0 rounded-full"
+            />
+            <p className="text-black font-display font-bold text-3xl  [writing-mode:vertical-lr]">botwinka</p>
           </div>
 
           <div className="flex flex-col items-end justify-end gap-1">
-            <Image src="/img/github.svg" className="cursor-pointer" alt="GitHub" width={48} height={48} />
-
-            <Image src="/img/linkedin.svg" className="cursor-pointer" alt="LinkedIn" width={48} height={48} />
+            {CONTACT_ITEMS.map((item) => (
+              <a key={item.label} href={item.targetUrl} target="_blank" rel="noopener noreferrer">
+                <Image src={item.imageSrc} className="cursor-pointer" alt={item.label} width={48} height={48} />
+              </a>
+            ))}
           </div>
         </div>
         <Button variant="primary" onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}>

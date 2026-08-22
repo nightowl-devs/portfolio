@@ -1,21 +1,17 @@
 "use client";
 import { LucideArrowUpRight } from "lucide-react";
+import { Heading } from "./ui/heading";
 
 export function WorksSection() {
   return (
-    <section
-      className="flex flex-col gap-4 px-12 pb-16 h-dvh items-center justify-center"
-      id="works"
-    >
+    <section className="flex flex-col gap-4 px-12 pb-16 min-h-dvh items-center justify-center" id="works">
       <div className="flex flex-col gap-1 self-end">
-        <h2 className="text-9xl font-bold text-black">
+        <Heading className=" font-bold text-black">
           things <span className="text-blue">i made</span>
-        </h2>
-        <p className="max-w-2xl text-2xl text-black self-end">
-          Read about my best creations.
-        </p>
+        </Heading>
+        <p className="max-w-2xl text-2xl text-black self-end">Read about my best creations.</p>
       </div>
-      <div className="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3 px-4">
+      <div className="grid grid-cols-1 gap-32 md:gap-6 md:grid-cols-2 lg:grid-cols-3 px-4 ">
         <ProjectCard
           name="ZaliczTo.PL"
           description="A learning platform built for Polish high school students.
@@ -58,15 +54,7 @@ type ProjectCardProps = {
   year: number;
   className?: string;
 };
-function ProjectCard({
-  name,
-  description,
-  imageUrl,
-  previewUrl,
-  type,
-  year,
-  className,
-}: ProjectCardProps) {
+function ProjectCard({ name, description, imageUrl, previewUrl, type, year, className }: ProjectCardProps) {
   return (
     <a
       href={previewUrl}
@@ -74,20 +62,11 @@ function ProjectCard({
       rel="noopener noreferrer"
       className={`flex flex-col gap-2 border border-gray group bg-white ${className}`}
     >
-      <img
-        src={imageUrl}
-        alt={name}
-        className="w-full h-60 border-gray border-b"
-      />
+      <img src={imageUrl} alt={name} className="w-full h-60 border-gray border-b" />
       <div className="flex flex-col gap-2 p-4">
         <div className="flex flex-row items-center justify-between">
-          <h3 className="text-3xl font-semibold font-display text-black">
-            {name}
-          </h3>
-          <LucideArrowUpRight
-            className="ml-2 h-8 w-8 text-black group-hover:text-blue transition-all "
-            strokeWidth={2}
-          />
+          <h3 className="text-3xl font-semibold font-display text-black">{name}</h3>
+          <LucideArrowUpRight className="ml-2 h-8 w-8 text-black group-hover:text-blue transition-all " strokeWidth={2} />
         </div>
         <p className="text-base font-medium uppercase text-gray">
           {type} · {year}

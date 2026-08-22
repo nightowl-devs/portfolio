@@ -93,14 +93,15 @@
 import Image from "next/image";
 import { Term } from "./ui/term";
 import { Button } from "./ui/button";
+import { Heading } from "./ui/heading";
 
 export function AboutSection() {
   return (
-    <section className="flex flex-col gap-4 px-12 h-dvh justify-center " id="about">
-      <h2 className="text-9xl font-bold text-black">
+    <section className="flex flex-col gap-4 px-12 min-h-dvh justify-center " id="about">
+      <Heading className="text-black">
         about <span className="text-blue">me</span>
-      </h2>
-      <div className="flex-row flex  justify-between  mr-4 ">
+      </Heading>
+      <div className="  flex-col xl:flex-row flex  justify-between  mr-4 gap-16 xl:gap-0">
         <div className="">
           <p className="max-w-2xl text-2xl text-black">
             I'm <span className="text-blue font-semibold">Stanisław Botwina</span>, a{" "}
@@ -141,7 +142,7 @@ export function AboutSection() {
           </p>
           <p className="text-sm text-gray">(hover over the highlighted words to translate to english)</p>
           <Button
-            className="mt-2 w-full"
+            className="mt-2  xl:w-full"
             variant="seccondary"
             onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}
           >
