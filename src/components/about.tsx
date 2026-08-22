@@ -18,12 +18,10 @@ export function AboutSection() {
         <div className="">
           <p className="max-w-2xl text-2xl text-black">
             {t.rich("intro.paragraph1", {
-              name: (chunks) => <span className="text-blue font-semibold">{t("terms.name.label")}</span>,
-              role: (chunks) => (
-                <Term definition={t("terms.fullStackDeveloper.definition")}>{t("terms.fullStackDeveloper.label")}</Term>
-              ),
-              country: (chunks) => <Term definition={t("terms.poland.definition")}>{t("terms.poland.label")}</Term>,
-              slop: (chunks) => <Term definition={t("terms.slop.definition")}>{t("terms.slop.label")}</Term>,
+              name: (chunks) => <span className="text-blue font-semibold">{chunks}</span>,
+              role: (chunks) => <Term definition={t("terms.fullStackDeveloper.definition")}>{chunks}</Term>,
+              country: (chunks) => <Term definition={t("terms.poland.definition")}>{chunks}</Term>,
+              slop: (chunks) => <Term definition={t("terms.slop.definition")}>{chunks}</Term>,
             })}
             <br />
             <br />
@@ -31,17 +29,17 @@ export function AboutSection() {
             <br />
             <br />
             {t.rich("intro.paragraph3", {
-              appName: (chunks) => <Term definition={t("terms.zaliczTo.definition")}>{t("terms.zaliczTo.label")}</Term>,
+              appName: (chunks) => <Term definition={t("terms.zaliczTo.definition")}>{chunks}</Term>,
               waitlist: (chunks) => (
                 <Term definition={t("terms.waitlist.definition")}>
-                  <a href="https://zaliczto.pl?utm_source=nightowl.dev">{t("terms.waitlist.label")}</a>
+                  <a href="https://zaliczto.pl?utm_source=nightowl.dev">{chunks}</a>
                 </Term>
               ),
             })}
             <br />
             <br />
             {t.rich("intro.paragraph4", {
-              leetcode: (chunks) => <Term definition={t("terms.leetcode.definition")}>{t("terms.leetcode.label")}</Term>,
+              leetcode: (chunks) => <Term definition={t("terms.leetcode.definition")}>{chunks}</Term>,
             })}
             <br />
             <br />
