@@ -4,14 +4,14 @@ import { Heading } from "./ui/heading";
 
 export function WorksSection() {
   return (
-    <section className="flex flex-col gap-4 px-12 pb-16 min-h-dvh items-center justify-center" id="works">
+    <section className="flex flex-col gap-4  px-4 sm:px-12 pb-16 min-h-dvh items-center justify-center mb-16 xl:mb-0" id="works">
       <div className="flex flex-col gap-1 self-end">
-        <Heading className=" font-bold text-black">
+        <Heading className=" font-bold text-black text-right">
           things <span className="text-blue">i made</span>
         </Heading>
-        <p className="max-w-2xl text-2xl text-black self-end">Read about my best creations.</p>
+        <p className="max-w-2xl text-2xl text-black self-end text-right">Read about my best creations.</p>
       </div>
-      <div className="grid grid-cols-1 gap-32 md:gap-6 md:grid-cols-2 lg:grid-cols-3 px-4 ">
+      <div className="grid grid-cols-1 items-center  justify-center  gap-8 mt-8 lg:mt-0 xl:gap-6 lg:grid-cols-2 xl:grid-cols-3 px-4 ">
         <ProjectCard
           name="ZaliczTo.PL"
           description="A learning platform built for Polish high school students.
@@ -20,7 +20,7 @@ export function WorksSection() {
           imageUrl="/img/project1.png"
           previewUrl="https://example.com/project1"
           type="Mobile App"
-          className="-rotate-16 translate-y-28"
+          className="lg:-rotate-16 lg:translate-y-28"
           year={2023}
         />
         <ProjectCard
@@ -37,7 +37,7 @@ export function WorksSection() {
           imageUrl="/img/project3.png"
           previewUrl="https://example.com/project3"
           type="Web App"
-          className="rotate-16 translate-y-32"
+          className="lg:rotate-16 lg:translate-y-32"
           year={2025}
         />
       </div>

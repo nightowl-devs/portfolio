@@ -97,7 +97,7 @@ import { Heading } from "./ui/heading";
 
 export function AboutSection() {
   return (
-    <section className="flex flex-col gap-4 px-12 min-h-dvh justify-center " id="about">
+    <section className="flex flex-col gap-4 px-4 sm:px-12 min-h-dvh justify-center " id="about">
       <Heading className="text-black">
         about <span className="text-blue">me</span>
       </Heading>
