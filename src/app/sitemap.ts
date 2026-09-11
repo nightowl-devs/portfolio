@@ -1,6 +1,5 @@
 import type { MetadataRoute } from "next";
-
-const siteUrl = "https://botwinka.dev";
+import { localizedSiteUrl, siteUrl } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const now = new Date();
@@ -12,8 +11,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 1,
       alternates: {
         languages: {
-          en: `${siteUrl}/en`,
-          pl: `${siteUrl}/pl`,
+          en: localizedSiteUrl("en"),
+          pl: localizedSiteUrl("pl"),
         },
       },
     },
