@@ -31,7 +31,9 @@ export function Navbar() {
 
   useEffect(() => {
     const updateHash = () => {
-      setCurrentHash(window.location.hash === "" ? "#home" : window.location.hash);
+      setCurrentHash(
+        window.location.hash === "" ? "#home" : window.location.hash,
+      );
     };
 
     updateHash();
@@ -50,17 +52,30 @@ export function Navbar() {
   };
 
   return (
-    <nav>
+    <nav aria-label="Primary">
       <div className="hidden md:grid w-full grid-cols-[1fr_auto_1fr] items-start gap-4 ">
         <div className="flex flex-col items-start justify-center gap-2">
-          <Image src="/img/home/profile.jpeg" alt={t("alt")} width={64} height={64} className="shrink-0 rounded-full" />
+          <Image
+            src="/img/home/profile.jpeg"
+            alt={t("alt")}
+            width={64}
+            height={64}
+            className="shrink-0 rounded-full"
+          />
 
           <div className="flex flex-row gap-2">
-            <p className="text-4xl text-display font-bold tracking-tight text-black [writing-mode:vertical-lr]">{t("brand")}</p>
+            <p className="text-4xl text-display font-bold tracking-tight text-black [writing-mode:vertical-lr]">
+              {t("brand")}
+            </p>
 
             <div className="flex flex-col items-end justify-end gap-1">
               {CONTACT_ITEMS.map((item) => (
-                <a key={item.labelKey} href={item.targetUrl} target="_blank" rel="noopener noreferrer">
+                <a
+                  key={item.labelKey}
+                  href={item.targetUrl}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
                   <Image
                     src={item.imageSrc}
                     className="cursor-pointer"
@@ -95,8 +110,17 @@ export function Navbar() {
         </div>
 
         <div className="flex flex-row justify-self-end gap-4">
-          <Button variant="primary" onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}>
-            <p className="text-base font-display font-bold text-white">{t("cta")}</p>
+          <Button
+            variant="primary"
+            onClick={() =>
+              document
+                .querySelector("#contact")
+                ?.scrollIntoView({ behavior: "smooth" })
+            }
+          >
+            <p className="text-base font-display font-bold text-white">
+              {t("cta")}
+            </p>
           </Button>
         </div>
       </div>
@@ -104,13 +128,26 @@ export function Navbar() {
       <div className="flex md:hidden flex-row justify-between items-start">
         <div className="flex flex-row">
           <div className="flex flex-col gap-2  ">
-            <Image src="/img/home/profile.jpeg" alt={t("alt")} width={48} height={48} className="shrink-0 rounded-full" />
-            <p className="text-black font-display font-bold text-3xl  [writing-mode:vertical-lr]">{t("brand")}</p>
+            <Image
+              src="/img/home/profile.jpeg"
+              alt={t("alt")}
+              width={48}
+              height={48}
+              className="shrink-0 rounded-full"
+            />
+            <p className="text-black font-display font-bold text-3xl  [writing-mode:vertical-lr]">
+              {t("brand")}
+            </p>
           </div>
 
           <div className="flex flex-col items-end justify-end gap-1">
             {CONTACT_ITEMS.map((item) => (
-              <a key={item.labelKey} href={item.targetUrl} target="_blank" rel="noopener noreferrer">
+              <a
+                key={item.labelKey}
+                href={item.targetUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <Image
                   src={item.imageSrc}
                   className="cursor-pointer"
@@ -122,8 +159,17 @@ export function Navbar() {
             ))}
           </div>
         </div>
-        <Button variant="primary" onClick={() => document.querySelector("#contact")?.scrollIntoView({ behavior: "smooth" })}>
-          <p className="text-base font-display font-bold text-white">{t("cta")}</p>
+        <Button
+          variant="primary"
+          onClick={() =>
+            document
+              .querySelector("#contact")
+              ?.scrollIntoView({ behavior: "smooth" })
+          }
+        >
+          <p className="text-base font-display font-bold text-white">
+            {t("cta")}
+          </p>
         </Button>
       </div>
     </nav>

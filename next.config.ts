@@ -5,10 +5,22 @@ const nextConfig: NextConfig = {
   /* config options here */
   allowedDevOrigins: ["192.168.1.23"],
   images: {
-    domains: ["media.licdn.com"],
+    remotePatterns: [{ protocol: "https", hostname: "media.licdn.com" }],
+  },
+  async headers() {
+    return [
+      {
+        source: "/(.*)",
+        headers: [
+          { key: "X-Content-Type-Options", value: "nosniff" },
+          { key: "X-Frame-Options", value: "SAMEORIGIN" },
+          { key: "Referrer-Policy", value: "strict-origin-when-cross-origin" },
+        ],
+      },
+    ];
   },
 
   reactCompiler: true,
 };
-const nextWithIntl =  createNextIntlPlugin();
+const nextWithIntl = createNextIntlPlugin();
 export default nextWithIntl(nextConfig);
