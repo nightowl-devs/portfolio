@@ -15,7 +15,8 @@ export default getRequestConfig(async () => {
   const headersList = await headers();
   const acceptLanguage = headersList.get("accept-language");
   const detected = getLocaleFromAcceptLanguage(acceptLanguage);
-  const locale = detected ?? defaultLocale;
+  //const locale = detected ?? defaultLocale;
+   const locale = "pl";
 
   return {
     locale,

@@ -1,7 +1,8 @@
 "use client";
-import { LucideArrowUpRight } from "lucide-react";
+import { GitBranch, LucideArrowUpRight } from "lucide-react";
 import { useTranslations } from "next-intl";
 import { Heading } from "./ui/heading";
+import Image from "next/image";
 
 export function WorksSection() {
   const t = useTranslations("Works");
@@ -19,29 +20,29 @@ export function WorksSection() {
           description={t("projects.zaliczTo.description")}
           imageUrl={t("projects.zaliczTo.image")}
           previewUrl={t("projects.zaliczTo.previewUrl")}
-          githubUrl={t("projects.zaliczTo.githubUrl")}
           type={t("projects.zaliczTo.type")}
           className="lg:-rotate-16 lg:translate-y-28"
           year={t("projects.zaliczTo.year")}
+        />
+
+        <ProjectCard
+          name={t("projects.mcFight.name")}
+          description={t("projects.mcFight.description")}
+          imageUrl={t("projects.mcFight.image")}
+          previewUrl={t("projects.mcFight.previewUrl")}
+          type={t("projects.mcFight.type")}
+          year={t("projects.mcFight.year")}
         />
         <ProjectCard
           name={t("projects.mailJudge.name")}
           description={t("projects.mailJudge.description")}
           imageUrl={t("projects.mailJudge.image")}
           previewUrl={t("projects.mailJudge.previewUrl")}
-          githubUrl={t("projects.mailJudge.githubUrl")}
+          // githubUrl={t("projects.mailJudge.githubUrl")}
+          // designUrl={t("projects.mailJudge.designUrl")}
           type={t("projects.mailJudge.type")}
-          year={t("projects.mailJudge.year")}
-        />
-        <ProjectCard
-          name={t("projects.mcFight.name")}
-          description={t("projects.mcFight.description")}
-          imageUrl={t("projects.mcFight.image")}
-          previewUrl={t("projects.mcFight.previewUrl")}
-          githubUrl={t("projects.mcFight.githubUrl")}
-          type={t("projects.mcFight.type")}
           className="lg:rotate-16 lg:translate-y-32"
-          year={t("projects.mcFight.year")}
+          year={t("projects.mailJudge.year")}
         />
       </div>
     </section>
@@ -56,9 +57,10 @@ type ProjectCardProps = {
   githubUrl?: string;
   type: string;
   year: string;
+  designUrl?: string;
   className?: string;
 };
-function ProjectCard({ name, description, imageUrl, previewUrl, githubUrl, type, year, className }: ProjectCardProps) {
+function ProjectCard({ name, description, imageUrl, previewUrl, githubUrl, designUrl, type, year, className }: ProjectCardProps) {
   const showGithub = githubUrl && !(previewUrl === "") ? true : false;
 
   return (
@@ -77,19 +79,35 @@ function ProjectCard({ name, description, imageUrl, previewUrl, githubUrl, type,
             <p className="text-xl text-black ">{description}</p>
           </div>
         </button>
+        <div className="flex flex-row gap-2">
+          {showGithub && (
+            <div className="flex flex-wrap gap-3 pt-2">
+              <a
+                href={githubUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-black underline decoration-gray decoration-dashed underline-offset-4 hover:text-blue"
+              >
+                <Image src="/img/brands/github.svg" alt="GitHub" height={16} width={16} /> GitHub
+                <LucideArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+          )}
 
-        {showGithub && (
-          <div className="flex flex-wrap gap-3 pt-2">
-            <a
-              href={githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm font-semibold text-black underline decoration-gray decoration-dashed underline-offset-4 hover:text-blue"
-            >
-              GitHub <LucideArrowUpRight className="h-4 w-4" />
-            </a>
-          </div>
-        )}
+          {designUrl && (
+            <div className="flex flex-wrap gap-3 pt-2">
+              <a
+                href={designUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-1 text-sm font-semibold text-black underline decoration-gray decoration-dashed underline-offset-4 hover:text-blue"
+              >
+                <Image src="/img/brands/figma.svg" alt="Figma" height={16} width={16} /> Figma
+                <LucideArrowUpRight className="h-4 w-4" />
+              </a>
+            </div>
+          )}
+        </div>
       </div>
     </div>
   );

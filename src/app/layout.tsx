@@ -21,6 +21,20 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title: t("title"),
     description: t("description"),
+    openGraph: {
+      title: t("title"),
+      description: t("description"),
+      url: "https://botwinka.dev",
+      siteName: "botwinka.dev",
+      images: [
+        {
+          url: "https://botwinka.dev/img/og-image.png",
+          width: 1200,
+          height: 630,
+          alt: "botwinka.dev",
+        },
+      ],
+    },
   };
 }
 

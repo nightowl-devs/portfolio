@@ -1,21 +1,18 @@
 {
   "Metadata": {
     "title": "Stanisław Botwina | Portfolio",
-    "description": "hi!"
+    "description": "My personal portfolio website. Check out my works and get in touch with me."
   },
   "Nav": {
     "brand": "botwinka",
     "links": {
-      "home": "Home",
       "about": "About",
       "works": "My works",
-      "contact": "Contact"
+      "contact": "Contact",
+      "home": "Home"
     },
     "cta": "Let''s Connect",
-    "alt": {
-      "profileDesktop": "MY Picture WOW!",
-      "profileMobile": "Profile Picture"
-    },
+    "alt": "Profile Picture",
     "ariaLabels": {
       "github": "GitHub",
       "linkedin": "LinkedIn"
@@ -73,7 +70,7 @@
         "definition": "An online platform containing an unhealthy amount of coding exercises of various difficulties. It''s often used by companies to test a candidate''s skills."
       }
     },
-    "hint": "(hover over the highlighted words to translate to english)",
+    "hint": "(hover over the highlighted words to see their definitions)",
     "cta": "Shoot me an email - let''s talk!",
     "images": {
       "codeAlt": "My setup!",
@@ -87,14 +84,21 @@
     },
     "subtitle": "Read about my best creations.",
     "projects": {
+      "mcFight": {
+        "name": "MCFight.PL",
+        "description": "Website for a Minecraft server featuring payments integration, server status, and top spenders. Built using Next.js, Tailwind CSS and MongoDB.",
+        "type": "E-Commerce ",
+        "year": "DEC 2024 - JAN 2025",
+        "image": "/img/projects/mcfight.png",
+        "previewUrl": "https://mcfight.vercel.app"
+      },
       "zaliczTo": {
         "name": "ZaliczTo.PL",
         "description": "A platform for highschoolders in Poland to learn various subjects. Over 100 people are on the waitlist. Built with a Java backend and an Expo mobile app.",
         "type": "Startup",
         "year": "AUG 2025 - Current",
         "image": "/img/projects/zaliczto.png",
-        "previewUrl": "https://zaliczto.pl",
-        "githubUrl": ""
+        "previewUrl": "https://zaliczto.pl"
       },
       "mailJudge": {
         "name": "MailJudge",
@@ -104,21 +108,18 @@
         "image": "/img/projects/mailjudge.svg",
         "previewUrl": "",
         "githubUrl": "https://github.com/nightowl-devs/mailjudge-java"
-      },
-      "mcFight": {
-        "name": "MCFight.PL",
-        "description": "Website for a Minecraft server featuring payments integration, server status, and top spenders. Built using Next.js, Tailwind CSS and MongoDB.",
-        "type": "E-Commerce ",
-        "year": "DEC 2024 - JAN 2025",
-        "image": "/img/projects/mcfight.png",
-        "previewUrl": "https://mcfight.vercel.app",
-        "githubUrl": ""
       }
     }
   },
   "Contact": {
     "heading": "Let’s make a way through.",
-    "description": "Available for any project, from a quick landing page to a full product. Contact me for a quote and let''s get started.",
+    "description": "Available for any project, from a quick landing page to a full product. Contact me for a quote and let's get started.",
     "email": "hello@nightowl.dev"
+  },
+  "NotFound": {
+    "title": "404",
+    "suffix": " - Not Found",
+    "description": "Seems like the page you are trying to come across does not exist.",
+    "cta": "Go Home"
   }
 }

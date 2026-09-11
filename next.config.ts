@@ -3,7 +3,7 @@ import createNextIntlPlugin from "next-intl/plugin";
 
 const nextConfig: NextConfig = {
   /* config options here */
-  allowedDevOrigins: ["192.168.1.10"],
+  allowedDevOrigins: ["192.168.1.23"],
   images: {
     domains: ["media.licdn.com"],
   },
