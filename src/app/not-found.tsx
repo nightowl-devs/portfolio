@@ -12,7 +12,7 @@ export default function NotFound() {
     <div className=" isolate flex w-full flex-col gap-16 overflow-clip">
       <div className="reative flex min-h-dvh w-full flex-col px-4 sm:px-12 pt-8">
         <Image
-          src="/img/home/hero-bg.png"
+          src="/img/home/hero-bg.svg"
           alt=""
           fill
           priority
@@ -25,11 +25,7 @@ export default function NotFound() {
             <span className="text-black">{t("suffix")}</span>
           </Heading>
           <p className="text-2xl text-black">{t("description")}</p>
-          <Button
-            variant="seccondary"
-            className="w-xl"
-            onClick={() => router.push("/")}
-          >
+          <Button variant="seccondary" className="w-xl" onClick={() => router.push("/")}>
             {t("cta")}
           </Button>
         </div>
