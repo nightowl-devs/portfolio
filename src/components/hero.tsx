@@ -1,6 +1,6 @@
 "use client";
 import { CornerRightDownIcon, DownloadIcon } from "lucide-react";
-import { useTranslations } from "next-intl";
+import { useLocale, useTranslations } from "next-intl";
 import { scrollTo } from "@/lib/utils";
 import { Button } from "./ui/button";
 import { Heading } from "./ui/heading";
@@ -8,6 +8,15 @@ import { Heading } from "./ui/heading";
 export function Hero() {
   const t = useTranslations("Hero");
   const subtitleLines = t("subtitle").split("\n");
+  const language = useLocale();
+
+  const handleDownloadResume = () => {
+    const resumeFileName =
+      language === "pl"
+        ? "/files/Stanisław_Botwina_Resume_PL.pdf"
+        : "/files/Stanisław_Botwina_Resume_EN.pdf";
+    window.open(resumeFileName, "_blank");
+  };
 
   return (
     <section
@@ -34,9 +43,7 @@ export function Hero() {
           <Button
             variant="primary"
             className="font-bold w-full xl:w-auto"
-            onClick={() =>
-              window.open("/files/StanislawBotwina-Resume-EN.pdf", "_blank")
-            }
+            onClick={handleDownloadResume}
           >
             {t("buttons.downloadResume")}
             <DownloadIcon
