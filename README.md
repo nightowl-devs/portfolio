@@ -4,19 +4,15 @@ A personal portfolio website showcasing my projects, resume, skills, and backgro
 
 ![](./assets/image.png)
 
-# View it live here: [click!](https://botwinkaportfolio.vercel.app)
+# View it live here: [click!](https://botwinka.dev)
 
 Features:
 
 - Seeing my projects
 - Downloading my resume
 - Reading about me
-- Good SEO (hopefully??)
+- Good SEO 
 
-### If you see I made a mistake and want to shoot me a PR to improve the site:
-
-- Download repo
-- Install deps (bun (1.3.14) OR node (v24.18.0) bun is recommended because its fast but if you dont want to use it its fine the site does not depend on bun specific features):
 
 ```bash
 bun i
