@@ -32,7 +32,7 @@ export function AboutSection() {
               appName: (chunks) => <Term definition={t("terms.zaliczTo.definition")}>{chunks}</Term>,
               waitlist: (chunks) => (
                 <Term definition={t("terms.waitlist.definition")}>
-                  <a href="https://zaliczto.pl?utm_source=nightowl.dev">{chunks}</a>
+                  <a href="https://zaliczto.pl?utm_source=botwinka.dev">{chunks}</a>
                 </Term>
               ),
             })}
