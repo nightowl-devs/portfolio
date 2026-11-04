@@ -25,7 +25,11 @@ export default function NotFound() {
             <span className="text-black">{t("suffix")}</span>
           </Heading>
           <p className="text-2xl text-black">{t("description")}</p>
-          <Button variant="seccondary" className="w-xl" onClick={() => router.push("/")}>
+          <Button
+            variant="seccondary"
+            className="w-xl"
+            onClick={() => router.push("/")}
+          >
             {t("cta")}
           </Button>
         </div>
