@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { DM_Sans, Space_Grotesk } from "next/font/google";
 import "./globals.css";
+import { Analytics } from "@vercel/analytics/next";
 import { NextIntlClientProvider } from "next-intl";
 import { getLocale, getTranslations } from "next-intl/server";
 import { localizedSiteUrl, siteUrl } from "@/lib/site";
@@ -84,7 +85,10 @@ export async function generateMetadata(): Promise<Metadata> {
       },
     },
     icons: {
-      icon: [{ url: "/favicon.ico" }, { url: "/img/home/profile.jpeg", type: "image/jpeg" }],
+      icon: [
+        { url: "/favicon.ico" },
+        { url: "/img/home/profile.jpeg", type: "image/jpeg" },
+      ],
       apple: [{ url: "/img/home/profile.jpeg" }],
     },
     manifest: "/manifest.webmanifest",
@@ -134,8 +138,16 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         url: siteUrl,
         image: `${siteUrl}/img/home/profile.jpeg`,
         jobTitle: "Full-Stack Developer",
-        description: "Full-stack developer and UI designer from Poland building modern web and mobile applications.",
-        knowsAbout: ["Next.js", "React", "TypeScript", "Java", "UI Design", "Tailwind CSS"],
+        description:
+          "Full-stack developer and UI designer from Poland building modern web and mobile applications.",
+        knowsAbout: [
+          "Next.js",
+          "React",
+          "TypeScript",
+          "Java",
+          "UI Design",
+          "Tailwind CSS",
+        ],
         sameAs: [
           "https://github.com/nightowl-devs",
           "https://www.linkedin.com/in/stanisław-botwina-693724388/",
@@ -147,7 +159,8 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
         "@id": `${siteUrl}/#website`,
         url: siteUrl,
         name: "Stanisław Botwina Portfolio",
-        description: "Portfolio of Stanisław Botwina — full-stack developer and UI designer from Poland.",
+        description:
+          "Portfolio of Stanisław Botwina — full-stack developer and UI designer from Poland.",
         inLanguage: locale,
         publisher: { "@id": `${siteUrl}/#person` },
         author: { "@id": `${siteUrl}/#person` },
@@ -156,12 +169,19 @@ export default async function RootLayout({ children }: LayoutProps<"/">) {
   };
 
   return (
-    <html lang={locale} className={`${dmSans.variable} ${spaceGrotesk.variable} h-full antialiased`}>
+    <html
+      lang={locale}
+      className={`${dmSans.variable} ${spaceGrotesk.variable} h-full antialiased`}
+    >
       <head>
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) } as never} />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) } as never}
+        />
       </head>
       <body className="min-h-full flex flex-col">
         <NextIntlClientProvider>{children}</NextIntlClientProvider>
+        <Analytics />
       </body>
     </html>
   );

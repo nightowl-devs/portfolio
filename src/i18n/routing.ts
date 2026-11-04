@@ -7,7 +7,9 @@ export function isValidLocale(locale: string): locale is Locale {
   return (locales as readonly string[]).includes(locale);
 }
 
-export function getLocaleFromAcceptLanguage(header: string | null): Locale | null {
+export function getLocaleFromAcceptLanguage(
+  header: string | null,
+): Locale | null {
   if (!header) return null;
 
   const preferences = header
